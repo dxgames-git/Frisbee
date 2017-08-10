@@ -19,18 +19,24 @@ public class GoalController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+       /* if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             count -= 0.1f;
             changeWidth(count);
-        }
+        }*/
 	}
 
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("entered");
         Destroy(other.gameObject);
         scoreCount++;
         updateScore();
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        Debug.Log("left");
     }
 
     void updateScore()
