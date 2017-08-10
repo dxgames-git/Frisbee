@@ -14,8 +14,10 @@ public class Frisbee : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            float z = Mathf.Cos(-1f * transform.rotation.x) * speed;
-            float y = Mathf.Sin(-1f * transform.rotation.x) * speed;
+            float z = Mathf.Cos(Mathf.PI / 6f) * speed;
+            float y = Mathf.Sin(Mathf.PI / 6f) * speed;
+            print(z);
+            print(y);
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0f, y, z);
             Destroy(this);
         }
