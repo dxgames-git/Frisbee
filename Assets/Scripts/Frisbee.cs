@@ -18,12 +18,10 @@ public class Frisbee : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
             shot = true;
-            float z = Mathf.Cos(Mathf.PI / 6f) * speed;
-            float y = Mathf.Sin(Mathf.PI / 6f) * speed;
-            print(z);
-            print(y);
+            float z = Mathf.Cos(Mathf.PI / 180f * (360f - transform.eulerAngles.x)) * speed;
+            float y = Mathf.Sin(Mathf.PI / 180f * (360f - transform.eulerAngles.x)) * speed;
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0f, y, z);
-            GameObject.FindGameObjectWithTag("FrisbeeController").GetComponent<FrisbeeController>().spawnDisc(((int) (Random.value * 3f)) - 1);
+            GameObject.FindGameObjectWithTag("FrisbeeController").GetComponent<FrisbeeController>().spawnDisc(Random.value < 0.5 ? -1 : 1);
             Destroy(this);
         }
     }

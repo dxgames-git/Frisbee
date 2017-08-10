@@ -22,8 +22,9 @@ public class FrisbeeController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-
-	}
+        currentDisc = GameObject.FindGameObjectWithTag("Disc");
+        currentDisc.GetComponent<Rigidbody>().velocity = new Vector2((Random.value < 0.5 ? -1 : 1) * sidewaySpeed, 0f);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -46,7 +47,7 @@ public class FrisbeeController : MonoBehaviour {
     public void spawnDisc(int side)
     {
         GameObject newDisc = Instantiate(discPrefab);
-        newDisc.transform.position = new Vector3(side * 2f, 0f, -7f);
+        newDisc.transform.position = new Vector3(side * (sidewayRange + 1), 0f, -7f);
         currentDisc = newDisc;
     }
 
