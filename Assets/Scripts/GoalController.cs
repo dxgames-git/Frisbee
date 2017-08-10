@@ -26,17 +26,11 @@ public class GoalController : MonoBehaviour {
         }*/
 	}
 
-     void OnTriggerEnter(Collider other)
+     void OnTriggerExit(Collider other)
     {
-        Debug.Log("entered");
         Destroy(other.gameObject);
         scoreCount++;
         updateScore();
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        Debug.Log("left");
     }
 
     void updateScore()
