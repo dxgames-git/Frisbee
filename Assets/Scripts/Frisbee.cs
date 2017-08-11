@@ -17,15 +17,16 @@ public class Frisbee : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Mathf.Abs(goal.transform.position.z - gameObject.transform.position.z) < 1.5)
-        {
-            checkDistance();
-        }
+        //if (Mathf.Abs(goal.transform.position.y - gameObject.transform.position.y) < 1)
+        //{
+            //checkDistance();
+        //}
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
             shot = true;
             float z = Mathf.Cos(Mathf.PI / 180f * (360f - transform.eulerAngles.x)) * speed;
             float y = Mathf.Sin(Mathf.PI / 180f * (360f - transform.eulerAngles.x)) * speed;
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0f, y, z);
+            checkDistance();
             GameObject.FindGameObjectWithTag("FrisbeeController").GetComponent<FrisbeeController>().spawnDisc(Random.value < 0.5 ? -1 : 1);
             Destroy(this);
         }

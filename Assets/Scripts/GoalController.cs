@@ -38,8 +38,11 @@ public class GoalController : MonoBehaviour {
 
     public void offCenter()
     {
-        count -= 0.01f;
-        StartCoroutine("ChangeWidth");
+        if (gameObject.transform.localScale.x > 0.3)
+        {
+            count -= 0.01f;
+            StartCoroutine("ChangeWidth");
+        }
     }
 
     IEnumerator ChangeWidth()
