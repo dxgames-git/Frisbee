@@ -320,8 +320,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 729856475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 9.3, z: 21.09}
-  m_LocalScale: {x: 5, y: 3.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -601,8 +601,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 802078858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.02, y: 0.84, z: 52.6}
-  m_LocalScale: {x: 38.27791, y: 38.27791, z: 38.27791}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b315d632291eb9b4f839ebca3488f34f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sidewaySpeed: 7
-  sidewayRange: 2
+  sidewaySpeed: 3
+  sidewayRange: 1.5
   discPrefab: {fileID: 1690240949990216, guid: 7bd00282a9bbc90418b17a8b6d92b167, type: 2}
   currentDisc: {fileID: 0}

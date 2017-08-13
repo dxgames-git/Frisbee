@@ -47,7 +47,7 @@ public class FrisbeeController : MonoBehaviour {
     public void spawnDisc(int side)
     {
         GameObject newDisc = Instantiate(discPrefab);
-        newDisc.transform.position = new Vector3(side * (sidewayRange + 1), 0f, -7f);
+        newDisc.transform.position = new Vector3(side * (sidewayRange + 1), -2f, -7f);
         currentDisc = newDisc;
     }
 
